@@ -1,30 +1,17 @@
 # AWS Cloud Security Monitoring
 
-## About Me
-My name is Abhishek Kudiri, an MSc Cybersecurity graduate who has worked in the areas of Cloud Security, Secure Development and Automation. I have a passion for designing & implementing Security Solutions in Cloud Environments. I love working with the Cloud to Monitor/Detect Threats, and Automate the Deployment of Security Solutions with Terraform & AWS Services.
+## About / Summary
+This project demonstrates a **hands-on implementation of AWS Cloud Security Monitoring** using Terraform and AWS Lambda. It showcases the automation of cloud infrastructure, secure log collection, and real-time monitoring of security events. The solution is designed to help organizations maintain a strong security posture by detecting anomalous activity in AWS accounts.
 
 ---
 
-## Project Abstract
-This project demonstrates a cloud security monitoring solution using **AWS CloudTrail, Lambda, S3, and CloudWatch**. The solution automatically captures and processes security logs in AWS, ensuring real-time visibility of account activity, anomaly detection, and centralized logging.  
+## Abstract
+The project focuses on automating AWS security monitoring using infrastructure as code. Key objectives include:
 
-Key objectives:
-- Capture all AWS API activity across regions
-- Store logs securely in an S3 bucket with versioning enabled
-- Process logs using AWS Lambda functions
-- Monitor and visualize logs in CloudWatch
+- Deploying a **CloudTrail trail** to log all AWS account activity.
+- Storing logs in a **versioned S3 bucket** with strict access controls.
+- Streaming logs to **CloudWatch Log Groups** for monitoring and analysis.
+- Using a **Lambda function** to ingest and process logs automatically.
+- Implementing Terraform for repeatable, consistent infrastructure deployment.
 
----
-
-## Tech Stack
-- **Terraform** – Infrastructure as Code for AWS resources
-- **AWS Lambda** – Serverless log processing
-- **AWS CloudTrail** – Logging AWS API events
-- **AWS S3** – Secure log storage
-- **AWS CloudWatch** – Centralized logging and monitoring
-- **Python** – Lambda function scripting
-
----
-
-## Project Structure
-
+This setup enables real-time visibility into security events, supports compliance, and provides a foundation for automated cloud security operations.
