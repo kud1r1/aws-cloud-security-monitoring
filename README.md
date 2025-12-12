@@ -15,3 +15,17 @@ The project focuses on automating AWS security monitoring using infrastructure a
 - Implementing Terraform for repeatable, consistent infrastructure deployment.
 
 This setup enables real-time visibility into security events, supports compliance, and provides a foundation for automated cloud security operations.
+
+## Architecture Diagram
+
+flowchart TD
+    A[CloudTrail] --> B[S3 Bucket]
+    B --> C[CloudWatch Log Group]
+    C --> D[Lambda Function]
+    D --> E[Monitoring / Alerting]
+
+
+
+
+
+
