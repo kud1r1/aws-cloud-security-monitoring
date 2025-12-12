@@ -16,13 +16,35 @@ The project focuses on automating AWS security monitoring using infrastructure a
 
 This setup enables real-time visibility into security events, supports compliance, and provides a foundation for automated cloud security operations.
 
-## Architecture Diagram
 
+## Architecture Diagram
+```mermaid
 flowchart TD
-    A[CloudTrail] --> B[S3 Bucket]
-    B --> C[CloudWatch Log Group]
+    A[CloudTrail Logs] --> B[S3 Bucket]
+    B --> C[S3 Event Trigger]
     C --> D[Lambda Function]
-    D --> E[Monitoring / Alerting]
+    D --> E[CloudWatch Log Group]
+    E --> F[Alerts and Monitoring]
+```
+
+## Workflow
+1. **Terraform Provisioning**
+   - Run `terraform init` to initialize.
+   - Run `terraform plan` to review changes.
+   - Run `terraform apply` to provision resources:
+     - CloudTrail trail
+     - S3 bucket
+     - CloudWatch Log Group
+     - IAM role for Lambda
+     - Lambda function
+
+2. **Log Generation**
+   - CloudTrail records all AWS API events.
+   - Logs are stored in S3 and streamed to CloudWatch.
+
+3. **Lambda Ingestion**
+   - Lambda reads logs from CloudWatch Log Group.
+   - Processes log events and stores results in CloudWatch for auditing.
 
 
 
